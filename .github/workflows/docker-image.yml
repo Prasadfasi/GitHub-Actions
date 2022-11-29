@@ -35,7 +35,7 @@ jobs:
     - name: Build, tag, and push image to Amazon ECR
       env:
         ECR_REGISTRY: 124414058015.dkr.ecr.ap-south-1.amazonaws.com
-        ECR_REPOSITORY: testreg
+        ECR_REPOSITORY: githubactions
         IMAGE_TAG: Test_Github_1.3
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
