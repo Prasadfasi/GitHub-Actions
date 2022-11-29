@@ -36,7 +36,7 @@ jobs:
       env:
         ECR_REGISTRY: 968813468508.dkr.ecr.us-east-1.amazonaws.com/githubactions
         ECR_REPOSITORY: githubactions
-        IMAGE_TAG: Test_Github_1.3
-      run: |
+        IMAGE_TAG: Test_Github_1.0
+      run: 
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
