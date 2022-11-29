@@ -24,9 +24,9 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: AKIARZ55H3YPQ3QBDAZ4
-        aws-secret-access-key: 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
-        aws-region: Ohio
+        aws-access-key-id: AKIA6DEOILNOCPO4OC6L
+        aws-secret-access-key: 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
+        aws-region: us-east-1
 
     - name: Login to Amazon ECR
       id: login-ecr
@@ -34,7 +34,7 @@ jobs:
 
     - name: Build, tag, and push image to Amazon ECR
       env:
-        ECR_REGISTRY: 124414058015.dkr.ecr.ap-south-1.amazonaws.com
+        ECR_REGISTRY: 968813468508.dkr.ecr.us-east-1.amazonaws.com/githubactions
         ECR_REPOSITORY: githubactions
         IMAGE_TAG: Test_Github_1.3
       run: |
