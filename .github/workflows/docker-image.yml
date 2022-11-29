@@ -18,8 +18,8 @@ jobs:
     - name: SonarQube Scan
       uses: kitabisa/sonarqube-action@v1.2.0
       with:
-        host: http://65.2.11.138:9000
-        login: f761a12cc67adeac4fb6fa237358ea840ce4962e
+        host: http://18.116.48.180:9000/
+        login: squ_9570b5325cb72147ae38b5823e991e0f6094ec68
     
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
