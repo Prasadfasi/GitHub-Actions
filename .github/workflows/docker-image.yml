@@ -42,7 +42,7 @@ jobs:
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
     - name: Send mail
       if: always()
-      uses: dawidd6/action-GitHub-Actions@v2
+      uses: Prasadfasi/GitHub-Actions@v2
       with:
         server_address: smtp.gmail.com
         server_port: 465
