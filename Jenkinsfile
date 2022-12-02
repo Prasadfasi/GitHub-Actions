@@ -1,23 +1,16 @@
-pipeline {
+pipeline{
   agent any
-  stages {
-    stage('Build') {
-      steps {
-        echo "building"
-        sleep 10
-      }
-    }
-    stage('Test') {
-      steps {
-        echo "testing"
-        sleep 30
-      }
-    }
-    stage('Deploy') {
-      steps {
-        echo "deploying"
-        stageMessage "sample stage message"
-      }
-    }
-  }
+  stages{
+    stage("Git Checkout"){
+      steps{
+            git credentialsId: 'github', url: 'https://github.com/Prasadfasi/GitHub-Actions.git'
+           }
+          }
+     stage("Maven Build"){
+       steps{
+            sh "mvn clean package"
+            sh "mv target/*.jar target/mcs.jar"
+             }
+            }
+   }
 }
