@@ -42,7 +42,7 @@ jobs:
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
     - name: Send mail
       if: always()
-      uses: Prasadfasi/GitHub-Actions@V2
+      uses: Prasadfasi/GitHub-Actions@v2
       with:
         server_address: smtp.gmail.com
         server_port: 465
@@ -51,4 +51,4 @@ jobs:
         subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
         body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
         to: fasireddygmail.com
-        from: prasad
+        from: Prasad
