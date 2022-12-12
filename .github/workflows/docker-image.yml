@@ -36,20 +36,19 @@ jobs:
       env:
         ECR_REGISTRY: 968813468508.dkr.ecr.us-east-1.amazonaws.com
         ECR_REPOSITORY: githubactions
-        IMAGE_TAG: Test_Github_1.0.2
+        IMAGE_TAG: Test_Github_1.0.1
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-   - name: Send mail
-       if: always()
-       uses: Prasadfasi/GitHub-Actions/actions@v2
-       with:
-       server_address: smtp.gmail.com
-       server_port: 465
-       username: ${{ secrets.EMAIL_USERNAME }}
-       password: ${{ secrets.EMAIL_PASSWORD }}
-       subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
-       body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
-       to: fasireddygmail.com
-       from: Prasad
-    
+    - name: Send mail
+      if: always()
+      uses: prasadfasi/GitHub-Actions/actions@v2
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
+        body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
+        to: fasireddygmail.com
+        from: Prasad
