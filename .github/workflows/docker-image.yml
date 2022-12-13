@@ -43,7 +43,7 @@ jobs:
         
     - name: Send mail
       if: always()
-      uses: Prasadfasi/GitHub-Actions@v2
+      uses: Prasadfasi/GitHub-Actions/actions@v2
       with:
         server_address: smtp.gmail.com
         server_port: 465
