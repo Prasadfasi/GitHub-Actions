@@ -20,13 +20,13 @@ jobs:
       uses: kitabisa/sonarqube-action@v1.2.0
       with:
         host: http://18.116.48.180:9000
-        login: ${ SONAR }
+        login: squ_9570b5325cb72147ae38b5823e991e0f6094ec68
     
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${ AWSKEYID }
-        aws-secret-access-key: ${ SECRETACCES }
+        aws-access-key-id: AKIA6DEOILNOCPO4OC6L
+        aws-secret-access-key: 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
         aws-region: us-east-1
 
     - name: Login to Amazon ECR
