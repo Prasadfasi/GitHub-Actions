@@ -20,7 +20,7 @@ jobs:
       uses: kitabisa/sonarqube-action@v1.2.0
       with:
         host: http://18.116.48.180:9000
-        login: $sonar
+        login: $SONAR
     
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
