@@ -40,7 +40,7 @@ jobs:
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-         - name: Send mail
+    - name: Send mail
       if: always()
       uses: Prasadfasi/GitHub-Actions/actions@v2.0
       with:
